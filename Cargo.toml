@@ -1,0 +1,23 @@
+[package]
+name = "access-derive"
+authors = ["Maxime BAILLY <maxbailly@hotmail.fr>"]
+license = "MIT OR Apache-2.0"
+version = "0.1.0"
+edition = "2018"
+description = "A derive to add getter/setter functions to structures."
+repository = "https://github.com/Caelmyn/access-derive"
+keywords = ["derive", "macro", "accessors"]
+categories = ["derive"]
+readme = "crates-io.md"
+include = ["src/**/*.rs", "crates-io.md", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = "1.0"
+quote = "1.0"
+proc-macro2 = "1.0"
+
+[dev-dependencies]
+syn = { version = "1.0", features = ["extra-traits"] }
