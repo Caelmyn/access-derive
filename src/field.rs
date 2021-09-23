@@ -44,7 +44,7 @@ impl<'a> Field<'a> {
         let field_expanded = self.accessors.iter().map(|access| {
             match access {
                 AccessType::GetRef((_, Some(typ_override))) => {
-                    let fn_name = format_ident!("get_{}", ident);
+                    let fn_name = format_ident!("{}", ident);
                     quote_spanned! {ident.span()=>
                         pub fn #fn_name(&self) -> #typ_override {
                             &self.#ident
@@ -52,7 +52,7 @@ impl<'a> Field<'a> {
                     }
                 },
                 AccessType::GetRef(_) => {
-                    let fn_name = format_ident!("get_{}", ident);
+                    let fn_name = format_ident!("{}", ident);
                     quote_spanned! {ident.span()=>
                         pub fn #fn_name(&self) -> &#typ {
                             &self.#ident
@@ -60,7 +60,7 @@ impl<'a> Field<'a> {
                     }
                 },
                 AccessType::GetRefMut(_) => {
-                    let fn_name = format_ident!("get_{}_mut", ident);
+                    let fn_name = format_ident!("{}_mut", ident);
                     quote_spanned! {ident.span()=>
                         pub fn #fn_name(&mut self) -> &mut #typ {
                             &mut self.#ident

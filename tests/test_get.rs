@@ -9,7 +9,7 @@ fn get() {
     }
 
     let test = Test { var1: String::from("this is a test") };
-    let a = test.get_var1();
+    let a = test.var1();
     assert_eq!(a, "this is a test");
 }
 
@@ -22,7 +22,7 @@ fn get_with_ref_helper() {
     }
 
     let test = Test { var1: String::from("this is a test") };
-    let a = test.get_var1();
+    let a = test.var1();
     assert_eq!(a, "this is a test");
 }
 
@@ -35,7 +35,7 @@ fn get_with_ref_mut_helper() {
     }
 
     let mut test = Test { var1: String::from("this is a test") };
-    let a = test.get_var1_mut();
+    let a = test.var1_mut();
     assert_eq!(a, "this is a test");
 
     a.push_str(" that works!");
@@ -51,7 +51,7 @@ fn get_with_ref_mut_and_custom_out_type() {
     }
 
     let test = Test { var1: String::from("this is a test") };
-    let a = test.get_var1();
+    let a = test.var1();
     assert_eq!(a, "this is a test");
 }
 
@@ -64,10 +64,10 @@ fn get_with_multiple_helpers() {
     }
 
     let mut test = Test { var1: String::from("this is a test") };
-    let a = test.get_var1();
+    let a = test.var1();
     assert_eq!(a, "this is a test");
 
-    let a = test.get_var1_mut();
+    let a = test.var1_mut();
     assert_eq!(a, "this is a test");
 
     a.push_str(" that works!");
