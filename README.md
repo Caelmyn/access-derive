@@ -27,9 +27,9 @@ pub struct MyStruct {
 }
 ```
 
-Attributes edded to the `foo` field will have following effects:
+Attributes added to the `foo` field will have following effects:
 - `#[access(get)]` will produce a method `foo(&self) -> &String { ... }`
-- `#[access(get(ref = '&str'))]` will produce a method `foo(&self) -> &str { ... }`
+- `#[access(get(ref = "&str"))]` will produce a method `foo(&self) -> &str { ... }`
 - `#[access(get(ref_mut)]` will produce a method `foo(&self) -> &mut String { ... }`
 - `#[access(set)]` will produce a method `set_foo(&mut self, String) { ... }`
 
